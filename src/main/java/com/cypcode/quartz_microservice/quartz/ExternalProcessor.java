@@ -12,8 +12,8 @@ public class ExternalProcessor extends QuartzProcessor{
 
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		log.info("Welocme to Cypcode External batch Processor");
-		log.info("Execute your External business logic here");
+		log.info("EXTERNAL PROCESSOR: batch Processor");
+		log.info("EXECUTE EXTERNAL PROCESSOR: business logic here");
 	}
 
 }

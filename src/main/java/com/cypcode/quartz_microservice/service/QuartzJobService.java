@@ -85,7 +85,16 @@ public class QuartzJobService {
 	
 	public void startTrigger(String name) throws SchedulerException {
 		Scheduler scheduler = schedulerFactoryBean.getScheduler();
-		scheduler.triggerJob(new JobKey(name));
+		try {
+			QuartzJob job = quartzJobRepository.findByName(name);
+			
+			JobDetail jobDetail = jobDetail(job);
+        scheduler.addJob(jobDetail, true);
+		scheduler.scheduleJob(jobTrigger(jobDetail, job));
+		}catch(Exception e) {
+			log.error(e.getMessage());
+		}
+		
 	}
 	
 	public void pauseTrigger(String name) throws SchedulerException {

@@ -13,8 +13,8 @@ public class InternalProcessor extends QuartzProcessor{
 
 	@Override
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		log.info("Welcome to Cypcode Internal batch Processor");
-		log.info("Execute your Internal business logic here");
+		log.info("INTERNALL PROCESSOR: batch Processor");
+		log.info("EXECUTE INTERNAL PROCESSOR: business logic here");
 		
 	}
 
